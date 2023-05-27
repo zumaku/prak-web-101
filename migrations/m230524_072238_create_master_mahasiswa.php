@@ -31,8 +31,8 @@ class m230524_072238_create_master_mahasiswa extends Migration
      */
     public function safeDown()
     {
-        echo "m230524_072238_create_master_mahasiswa cannot be reverted.\n";
-
+        // echo "m230524_072238_create_master_mahasiswa cannot be reverted.\n";
+        $this->delete('master_mahasiswa');
         return false;
     }
 
