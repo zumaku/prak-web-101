@@ -3,30 +3,30 @@
 use yii\grid\GridView;
 
 ?>
-<h1>mahasiswa/index</h1>
-
-<p>
-    You may change the content of this page by modifying
-    the file <code><?= __FILE__; ?></code>.
-</p>
-
+<a href="/mahasiswa/tambah" class="btn btn-primary">Mahasiswa Baru</a>
 <?=
 GridView::widget([
-    'dataProvider' => $dataProvider, // DataProvider yang berisi data yang ingin ditampilkan
+    'dataProvider' => $dataProvider,
+    'tableOptions' => [
+        'class' => 'table table-striped table-bordered'
+    ],
+    'options' => [
+        'class' => 'table-responsive',
+    ],
     'columns' => [
-        'id', // Kolom ID
-        'nim', // Kolom NIM
-        'nama', // Kolom Nama
-        'kelas', // Kolom Kelas
-        // Mengakses tabel yang berelasi
+        // Number of row
         [
-            'attribute' => 'profile101.foto_profile',
-            // 'label' => 'Foto Profile',
+            'class' => 'yii\grid\SerialColumn'
         ],
+        'id_101',
+        'no_induk_mahasiswa_101',
+        'nama_mahasiswa_101',
+        'kelas_101',
+        'status_101',
         // Menampilkan kolom edit
         [
-            'class' => 'yii\grid\ActionColumn', // Kolom aksi
-            'template' => '{view} {update} {delete}', // Template tombol aksi yang ingin ditampilkan
+            'class' => 'yii\grid\ActionColumn',
+            'template' => '{view} {update} {delete}',
         ],
     ],
 ])
