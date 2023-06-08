@@ -1,6 +1,7 @@
 <?php
 /** @var yii\web\View $this */
 use yii\grid\GridView;
+$this->title = "Pendidikan";
 ?>
 <h1>pendidikan/index</h1>
 

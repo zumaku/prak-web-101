@@ -1,7 +1,7 @@
 <?php
 /** @var yii\web\View $this */
 use yii\grid\GridView;
-
+$this->title = "Mahasiswa";
 ?>
 <a href="/mahasiswa/tambah" class="btn btn-primary">Mahasiswa Baru</a>
 <?=
