@@ -6,7 +6,7 @@ $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
 
-    <div class="jumbotron text-center bg-transparent mt-1 mb-1">
+    <div class="jumbotron text-center bg-transparent mt-2 mb-2">
         <h1 class="display-4">Welcome Zul Fadli</h1>
         <p class="lead">Berikut Aturan Laporan Praktikum 3</p>
     </div>
