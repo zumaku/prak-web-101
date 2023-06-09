@@ -7,6 +7,7 @@ use yii\db\ActiveRecord;
 use app\models\Mahasiswa;
 use yii\data\ActiveDataFilter;
 use yii\data\ActiveDataProvider;
+use Yii;
 
 class MahasiswaController extends \yii\web\Controller{
 
@@ -33,6 +34,7 @@ class MahasiswaController extends \yii\web\Controller{
         $mhs->kelas_101 = 'D';
         $mhs->status_101 = 'Baru';
         $mhs->save();
+        Yii::$app->session->setFlash('success', 'Mahasiswa Baru ditambahkan');
         return $this->redirect(['index']);
     }
 
