@@ -57,22 +57,22 @@ $config = [
             'bundles' => [
                 'yii\web\JqueryAsset' => [
                     'sourcePath' => null,
-                    'basePath' => @webroot,
-                    'baseUrl' => @web,
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
                     'js' => [
                         'template/js/jquery.min.css'
                     ],
                 ],
                 'yii\bootstrap5\BootstrapAsset' => [
                     'sourcePath' => null,
-                    'basePath' => @webroot,
-                    'baseUrl' => @web,
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
                     'css' => [
                         'template/css/bootstrap.min.css'
                     ],
                 ],
             ],
-        ]
+        ],
         
     ],
     'params' => $params,
