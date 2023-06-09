@@ -225,7 +225,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                             <a href="javascript:void(0);" class="waves-effect"><i class="ti-files"></i><span> Pages </span> <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
                                 <li><a href="/mahasiswa">Mahasiswa</a></li>
-                                <li><a href="/master-pendidikan">Master Mahasiswa</a></li>
+                                <li><a href="/master-mahasiswa">Master Mahasiswa</a></li>
                                 <li><a href="/pendidikan">Pendidikan</a></li>
                             </ul>
                         </li>
