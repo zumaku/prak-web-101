@@ -34,7 +34,7 @@ class MahasiswaController extends \yii\web\Controller{
         $mhs->kelas_101 = 'D';
         $mhs->status_101 = 'Baru';
         $mhs->save();
-        Yii::$app->session->setFlash('success', 'Mahasiswa Baru ditambahkan');
+        Yii::$app->getSession()->setFlash('sucAddMhs', 'Mahasiswa baru <strong>berhasil ditambahkan!</strong>');
         return $this->redirect(['index']);
     }
 
@@ -43,12 +43,14 @@ class MahasiswaController extends \yii\web\Controller{
         $mhs = $mhs->findOne($id);
         $mhs->status_101 = 'Update';
         $mhs->save();
+        Yii::$app->getSession()->setFlash('sucUpdMhs', 'Data mahasiswa ' . $mhs->no_induk_mahasiswa_101 . ' <strong>berhasil diupdate!</strong>');
         return $this->redirect(['index']);
     }
-
+    
     public function actionDelete($id){
         $mhs = Mahasiswa::findOne($id);
         if ($mhs->delete()) {
+            Yii::$app->getSession()->setFlash('sucDelMhs', 'Data mahasiswa ' . $mhs->no_induk_mahasiswa_101 . ' <strong>berhasil dihapus!</strong>');
             return $this->redirect(['index']);
         }
         else {
