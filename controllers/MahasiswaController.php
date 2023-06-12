@@ -33,20 +33,23 @@ class MahasiswaController extends \yii\web\Controller{
         $mhs->kelas_101 = 'D';
         $mhs->status_101 = 'Baru';
         $mhs->save();
+        \Yii::$app->getSession()->setFlash('success_add', 'Mahasiswa baru <strong>berhasil ditambahkan</strong>.');
         return $this->redirect(['index']);
     }
-
+    
     public function actionUpdate($id){
         $mhs = new Mahasiswa;
         $mhs = $mhs->findOne($id);
         $mhs->status_101 = 'Update';
         $mhs->save();
+        \Yii::$app->getSession()->setFlash('success_update', 'Mahasiswa nim: ' . $mhs->no_induk_mahasiswa_101 . ' <strong>berhasil diupdate</strong>.');
         return $this->redirect(['index']);
     }
 
     public function actionDelete($id){
         $mhs = Mahasiswa::findOne($id);
         if ($mhs->delete()) {
+            \Yii::$app->getSession()->setFlash('delete_update', 'Mahasiswa nim: ' . $mhs->no_induk_mahasiswa_101 . ' <strong>berhasil dihapus</strong>.');
             return $this->redirect(['index']);
         }
         else {

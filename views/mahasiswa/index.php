@@ -2,6 +2,31 @@
 /** @var yii\web\View $this */
 use yii\grid\GridView;
 
+$add_success = Yii::$app->session->getFlash('success_add');
+if(isset($add_success)){
+	echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+		' . $add_success . '
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>';
+}
+
+$up_success = Yii::$app->session->getFlash('success_update');
+if(isset($up_success)){
+	echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+		' . $up_success . '
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>';
+}
+
+$del_success = Yii::$app->session->getFlash('delete_update');
+if(isset($del_success)){
+	echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+		' . $del_success . '
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>';
+}
+
+
 ?>
 <!-- preloader -->
 <div id="preloader">
