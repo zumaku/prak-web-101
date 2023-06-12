@@ -71,6 +71,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 							<a class="nav-link dropdown-toggle" href="/#">Pages</a>
 							<ul class="dropdown-menu">
 								<li><a class="dropdown-item" href="/mahasiswa">Mahasiswa</a></li>
+								<li><a class="dropdown-item" href="/master-mahasiswa">Master Mahasiswa</a></li>
 								<li><a class="dropdown-item" href="/pendidikan">Pendidikan</a></li>
 								<li><a class="dropdown-item" href="/category">Category</a></li>
 								<li><a class="dropdown-item" href="/blog-single">Blog Single</a></li>
@@ -86,7 +87,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 				</div>
 
 				<!-- header right section -->
-				<div class="header-right"> -->
+				<div class="header-right">
 					<!-- header buttons -->
 					<div class="header-buttons">
 						<button class="search icon-button">
