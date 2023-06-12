@@ -10,6 +10,8 @@ $this->title = "Pendidikan";
     the file <code><?= __FILE__; ?></code>.
 </p>
 
+<a href="/mahasiswa/tambah" class="btn btn-primary">Mahasiswa Baru</a>
+
 <?=
 GridView::widget([
     'dataProvider' => $dataProvider,
@@ -25,4 +27,3 @@ GridView::widget([
     ],
 ])
 ?>
-<a href="/pendidikan/create" class="btn btn-outline-primary">Tabah Data</a>

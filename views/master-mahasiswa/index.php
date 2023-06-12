@@ -9,6 +9,7 @@ use yii\grid\GridView;
     the file <code><?= __FILE__; ?></code>.
 </p>
 
+<a href="/mahasiswa/tambah" class="btn btn-primary">Mahasiswa Baru</a>
 
 <?=
 GridView::widget([
