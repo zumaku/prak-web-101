@@ -2,6 +2,37 @@
 /** @var yii\web\View $this */
 use yii\grid\GridView;
 ?>
+<!-- preloader -->
+<div id="preloader">
+	<div class="book">
+		<div class="inner">
+			<div class="left"></div>
+			<div class="middle"></div>
+			<div class="right"></div>
+		</div>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</div>
+
 <h1>pendidikan/index</h1>
 
 <p>

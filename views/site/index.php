@@ -4,6 +4,36 @@
 
 $this->title = 'My Yii Application';
 ?>
+<!-- preloader -->
+<div id="preloader">
+	<div class="book">
+		<div class="inner">
+			<div class="left"></div>
+			<div class="middle"></div>
+			<div class="right"></div>
+		</div>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</div>
 <div class="site-index">
 
     <div class="jumbotron text-center bg-transparent mt-1 mb-1">
@@ -30,3 +60,4 @@ $this->title = 'My Yii Application';
 
     </div>
 </div>
+
