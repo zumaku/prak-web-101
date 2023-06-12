@@ -59,7 +59,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 					<!-- menus -->
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item dropdown active">
-							<a class="nav-link" href="">Home</a>
+							<a class="nav-link" href="/">Home</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/category">Lifestyle</a>
@@ -86,15 +86,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 				</div>
 
 				<!-- header right section -->
-				<div class="header-right">
-					<!-- social icons -->
-					<ul class="social-icons list-unstyled list-inline mb-0">
-						<li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f icon-social-facebook"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fab fa-twitter icon-social-twitter"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fab fa-instagram icon-social-instagram"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fab fa-pinterest icon-social-pinterest"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fab fa-youtube icon-social-youtube"></i></a></li>
-					</ul>
+				<div class="header-right"> -->
 					<!-- header buttons -->
 					<div class="header-buttons">
 						<button class="search icon-button">
@@ -131,12 +123,11 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 					<!-- social icons -->
 					<div class="col-md-4 text-center">
 						<ul class="social-icons list-unstyled list-inline mb-0">
-							<li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i class="fab fa-medium"></i></a></li>
-							<li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i class="fab fa-facebook icon-social-facebook"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i class="fab fa-twitter icon-social-twitter"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i class="fab fa-instagram icon-social-instagram"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i class="fab fa-pinterest icon-social-pinterest"></i></a></li>
+							<li class="list-inline-item"><a href="#"><i class="fab fa-youtube icon-social-youtube"></i></a></li>
 						</ul>
 					</div>
 
