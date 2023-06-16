@@ -8,6 +8,7 @@
     color: white;
 }
 .bgku-primary:hover{
+    background-color: #2f3943 !important;
     color: white;
 }
 .bgku-secondary{
