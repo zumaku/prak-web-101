@@ -15,15 +15,24 @@ use Yii;
  */
 class Mahasiswa extends \yii\db\ActiveRecord
 {
+    const A = 'A';
+    const B = 'B';
+    const C = 'C';
+    const D = 'D';
+
     const KELAS = [
-        'A' => 'A',
-        'B' => 'B',
-        'C' => 'C',
-        'D' => 'D'
+        self::A => 'A',
+        self::B => 'B',
+        self::C => 'C',
+        self::D => 'D'
     ];
+
+    const LULUS = '1';
+    const TLULUS = '0';
+
     const STATUS = [
-        'Lulus' => 'Lulus',
-        'Tidak Lulus' => 'Tidak Lulus',
+        '1' => 'Lulus',
+        '0' => 'Tidak Lulus',
     ];
 
     public static function tableName(){
@@ -34,7 +43,7 @@ class Mahasiswa extends \yii\db\ActiveRecord
         return [
             [['no_induk_mahasiswa_101', 'nama_mahasiswa_101', 'kelas_101', 'status_101'], 'string', 'max' => 255],
             [['kelas_101'], 'in', 'range' => self::KELAS],
-            [['status_101'], 'in', 'range' => self::STATUS],
+            [['status_101'], 'in', 'range' => [self::LULUS, self::TLULUS]],
         ];
     }
 
