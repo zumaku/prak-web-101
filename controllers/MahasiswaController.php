@@ -22,6 +22,7 @@ class MahasiswaController extends \yii\web\Controller{
 
     public function actionView($id){
         $data = Mahasiswa::findOne($id);
+        $data->status_101 = Mahasiswa::STATUS[$data->status_101];
         return $this->render('view', [
             'model' => $data,
         ]);
