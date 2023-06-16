@@ -1,0 +1,26 @@
+.my-1{ margin: 4px 0;}
+.my-2{margin: 8px 0;}
+.my-3{margin: 12px 0;}
+.my-4{margin: 16px 0;}
+.my-5{margin: 120px 0;}
+.bgku-primary{
+    background-color: #36404a !important;
+    color: white;
+}
+.bgku-primary:hover{
+    color: white;
+}
+.bgku-secondary{
+    background-color: #5fbeaa !important;
+    color: white;
+}
+.bgku-secondary:hover{
+    background-color: #5bb5a1 !important;
+    color: white;
+}
+.textku-primary{
+    color: #36404a !important;
+}
+.textku-secondary{
+    color: #5fbeaa !important;
+}

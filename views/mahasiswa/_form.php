@@ -19,7 +19,8 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'status_101')->textInput(['maxlength' => true])
         ->dropDownList(Mahasiswa::STATUS) ?>
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Save', ['class' => 'btn bgku-secondary']) ?>
+        <a href="/mahasiswa" class="btn bgku-primary">Cancel</a>
     </div>
 
     <?php ActiveForm::end(); ?>
