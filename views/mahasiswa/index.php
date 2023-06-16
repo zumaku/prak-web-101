@@ -18,7 +18,9 @@ $del = Yii::$app->session->getFlash('sucDelMhs');
 if( $del !== NULL )
     echo '<div class="alert alert-success d-flex align-items-center" role="alert"><div>' . $del . ' </div></div>';
 ?>
-<a href="/mahasiswa/tambah" class="btn btn-primary">Mahasiswa Baru</a>
+
+<a href="/mahasiswa/tambah" class="btn btn-primary"><i class="ti-plus"></i> Mahasiswa Baru</a>
+
 <?=
 GridView::widget([
     'dataProvider' => $dataProvider,

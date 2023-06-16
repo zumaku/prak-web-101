@@ -29,13 +29,21 @@ class MahasiswaController extends \yii\web\Controller{
 
     public function actionTambah(){
         $mhs = new Mahasiswa;
-        $mhs->no_induk_mahasiswa_101 = '60200121101-' . rand(1, 100);
-        $mhs->nama_mahasiswa_101 = 'Zul Fadli Ahmad';
-        $mhs->kelas_101 = 'D';
-        $mhs->status_101 = 'Baru';
-        $mhs->save();
-        Yii::$app->getSession()->setFlash('sucAddMhs', 'Mahasiswa baru <strong>berhasil ditambahkan!</strong>');
-        return $this->redirect(['index']);
+        if($mhs->load($this->request->post()) && $mhs->save()){     // load semua data yang ada di post dan save. redirect ke halaman view?id=...
+            return $this->redirect([
+                'view',
+                'id' => $mhs->id_101,
+            ]);
+        } else{
+            $mhs->loadDefaultValues();
+        }
+
+        // Yii::$app->getSession()->setFlash('sucAddMhs', 'Mahasiswa baru <strong>berhasil ditambahkan!</strong>');
+        // return $this->redirect(['index']);
+
+        return $this->render('create', [
+            'model' => $mhs,
+        ]);
     }
 
     public function actionUpdate($id){

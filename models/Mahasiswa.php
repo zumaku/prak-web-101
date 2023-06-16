@@ -15,6 +15,13 @@ use Yii;
  */
 class Mahasiswa extends \yii\db\ActiveRecord
 {
+    const KELAS = [
+        'A' => 'A',
+        'B' => 'B',
+        'C' => 'C',
+        'D' => 'D'
+    ];
+
     public static function tableName(){
         return 'mahasiswa';
     }
@@ -22,6 +29,7 @@ class Mahasiswa extends \yii\db\ActiveRecord
     public function rules(){
         return [
             [['no_induk_mahasiswa_101', 'nama_mahasiswa_101', 'kelas_101', 'status_101'], 'string', 'max' => 255],
+            [['kelas_101'], 'in', 'range' => self::KELAS],
         ];
     }
 
