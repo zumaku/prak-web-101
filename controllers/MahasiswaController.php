@@ -5,11 +5,35 @@ namespace app\controllers;
 use yii\db\ActiveRecord;
 // use app\models\Mahasiswa101;
 use app\models\Mahasiswa;
+use app\models\Mahasiswa101;
 use yii\data\ActiveDataFilter;
 use yii\data\ActiveDataProvider;
+use yii\web\Controller;
+use yii\filters\AccessControl;
 use Yii;
 
 class MahasiswaController extends \yii\web\Controller{
+
+    public function behaviors(){
+        return [
+            'access' => [
+                'class' => AccessControl::class,
+                'only' => ['index', 'tambah', 'view'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['index', 'view'],
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['tambah', 'index', 'view'],
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
 
     public function actionIndex(){
         $dataProvider = new ActiveDataProvider([
@@ -22,7 +46,6 @@ class MahasiswaController extends \yii\web\Controller{
 
     public function actionView($id){
         $data = Mahasiswa::findOne($id);
-        $data->status_101 = Mahasiswa::STATUS[$data->status_101];
         return $this->render('view', [
             'model' => $data,
         ]);

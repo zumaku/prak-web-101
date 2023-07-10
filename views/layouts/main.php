@@ -197,7 +197,16 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <li><a href="javascript:void(0)"><i class="ti-settings m-r-10 text-custom"></i> Settings</a></li>
                                     <li><a href="javascript:void(0)"><i class="ti-lock m-r-10 text-custom"></i> Lock screen</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="javascript:void(0)"><i class="ti-power-off m-r-10 text-danger"></i> Logout</a></li>
+
+                                    <?php
+                                    if (!Yii::$app->user->isGuest){
+                                        echo '<li><a href="/site/logout"><i class="ti-power-off m-r-10 text-danger"></i> Logout</a></li>';
+
+                                    } else{
+                                        echo '<li><a href="/site/login"><i class="ti-power-on m-r-10 text-primary"></i> Login</a></li>';
+                                    }
+                                    ?>
+
                                 </ul>
                             </li>
                         </ul>

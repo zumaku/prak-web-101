@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\User;
 
 class SiteController extends Controller
 {
@@ -125,4 +126,15 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    public function actionCreateUser() {
+        $model = new User;
+        $model->username = 'root';
+        $model->email = 'test@mail.com';
+        $model->setPassword('12345678');
+        $model->generateAuthKey();
+
+        if( $model->save() ) return $this->redirect(['/']);
+        else return $this->redirect(['/site/login']);
+	}
 }
