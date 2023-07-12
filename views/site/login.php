@@ -21,6 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <?php $form = ActiveForm::begin([
                 'id' => 'login-form',
+                'layout' => 'horizontal',
                 'fieldConfig' => [
                     'template' => "{label}\n{input}\n{error}",
                     'labelOptions' => ['class' => 'col-lg-1 col-form-label mr-lg-3'],
@@ -30,16 +31,15 @@ $this->params['breadcrumbs'][] = $this->title;
             ]); ?>
 
             <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-            <!-- <br><br><br><br> -->
+
             <?= $form->field($model, 'password')->passwordInput() ?>
-            <!-- <br><br><br><br> -->
+
             <?= $form->field($model, 'rememberMe')->checkbox([
-                'template' => "<div class=\"custom-control custom-checkbox\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
+                'template' => "<div class=\"offset-lg-1 col-lg-4 custom-control custom-checkbox\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
             ]) ?>
-            <!-- <br> -->
             <div class="form-group">
                 <div>
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                    <?= Html::submitButton('Login', ['class' => 'btn bgku-secondary', 'name' => 'login-button']) ?>
                 </div>
             </div>
 
