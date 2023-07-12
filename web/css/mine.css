@@ -6,22 +6,33 @@
 .bgku-primary{
     background-color: #36404a !important;
     color: white;
-}
-.bgku-primary:hover{
-    background-color: #2f3943 !important;
-    color: white;
+    &:hover{
+        background-color: #2f3943 !important;
+        color: white;
+    }
 }
 .bgku-secondary{
     background-color: #5fbeaa !important;
     color: white;
-}
-.bgku-secondary:hover{
-    background-color: #5bb5a1 !important;
-    color: white;
+    &:hover{
+        background-color: #5bb5a1 !important;
+        color: white;
+    }
 }
 .textku-primary{
     color: #36404a !important;
 }
 .textku-secondary{
     color: #5fbeaa !important;
+}
+
+form[action="site/logout"]:hover{
+    background-color: rgb(247, 247, 247);
+}
+
+#my-btn-logout{
+    background-color: transparent;
+    border: 0;
+    padding: 6px 20px;
+    color: black;
 }

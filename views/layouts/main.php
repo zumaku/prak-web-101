@@ -197,16 +197,19 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <li><a href="javascript:void(0)"><i class="ti-settings m-r-10 text-custom"></i> Settings</a></li>
                                     <li><a href="javascript:void(0)"><i class="ti-lock m-r-10 text-custom"></i> Lock screen</a></li>
                                     <li class="divider"></li>
-
-                                    <?php
-                                    if (!Yii::$app->user->isGuest){
-                                        echo '<li><a href="/site/logout"><i class="ti-power-off m-r-10 text-danger"></i> Logout</a></li>';
-
-                                    } else{
-                                        echo '<li><a href="/site/login"><i class="ti-power-on m-r-10 text-primary"></i> Login</a></li>';
-                                    }
+                                    <li>
+                                    <?php                                        
+                                        if (!Yii::$app->user->isGuest){
+                                            // echo '<a href="/site/logout" data-method="post"><i class="ti-power-off m-r-10 text-danger"></i> Logout</a>';
+                                            echo '<form action="site/logout" method="POST">';
+                                                echo '<input id="form-token" type="hidden" name="' . Yii::$app->request->csrfParam . '"value="' . Yii::$app->request->csrfToken . '"/>';
+                                                echo '<button type="submit" id="my-btn-logout"><i class="ti-power-off m-r-10 text-danger"></i> Logout</button>';
+                                            echo '</form>';
+                                        } else{
+                                            echo '<a href="/site/login"><i class="ti-power-off m-r-10 text-success"></i> Login</a>';
+                                        }
                                     ?>
-
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -228,9 +231,9 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 
                         <li class="text-muted menu-title">Navigation</li>
 
-                       <li><a href="/"><i class="ti-home"></i> Dashboard</a></li>
+                        <li><a href="/"><i class="ti-home"></i> Dashboard</a></li>
 
-                       <li class="has_sub">
+                        <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect"><i class="ti-files"></i><span> Pages </span> <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">
                                 <li><a href="/mahasiswa">Mahasiswa</a></li>
