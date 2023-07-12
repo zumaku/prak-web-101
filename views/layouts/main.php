@@ -239,6 +239,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                 <li><a href="/mahasiswa">Mahasiswa</a></li>
                                 <li><a href="/master-mahasiswa">Master Mahasiswa</a></li>
                                 <li><a href="/pendidikan">Pendidikan</a></li>
+                                <li><a href="/rekapitulasi">Rekapitulasi</a></li>
                             </ul>
                         </li>
 

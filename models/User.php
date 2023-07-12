@@ -196,4 +196,19 @@ class User extends ActiveRecord implements IdentityInterface {
     public function removePasswordResetToken() {
         $this->password_reset_token = null;
     }
+
+
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'Id User',
+            'username' => 'Username',
+            'email' => 'Email',
+        ];
+    }
+
+    public function getProduks()
+    {
+        return $this->hasMany(Produk::class, ['id' => 'id']);
+    }
 }
