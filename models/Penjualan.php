@@ -32,7 +32,7 @@ class Penjualan extends \yii\db\ActiveRecord
         return [
             [['id_produk', 'jumlah_terjual', 'keuntungan'], 'required'],
             [['id_produk', 'jumlah_terjual', 'keuntungan'], 'integer'],
-            [['id_produk'], 'exist', 'skipOnError' => true, 'targetClass' => Produk::class, 'targetAttribute' => ['id_produk' => 'id_produk']],
+            [['id_produk'], 'exist', 'skipOnError' => true, 'targetClass' => Produk::class, 'targetAttribute' => ['id_produk' => 'id']],
         ];
     }
 
@@ -56,6 +56,6 @@ class Penjualan extends \yii\db\ActiveRecord
      */
     public function getProduk()
     {
-        return $this->hasOne(Produk::class, ['id_produk' => 'id_produk']);
+        return $this->hasOne(Produk::class, ['id' => 'id_produk']);
     }
 }

@@ -8,6 +8,8 @@ $this->title = "Rekapitulasi Penjualan";
 // die;
 ?>
 
+<a href="/rekapitulasi/tambah" class="btn bgku-secondary my-2"><i class="ti-plus"></i> Produk Baru</a>
+
 <?=
 GridView::widget([
     'dataProvider' => $dataProvider,
@@ -20,7 +22,6 @@ GridView::widget([
     'columns' => [
         ['class' => 'yii\grid\SerialColumn'],
         'nama_produk',
-        // 'deskripsi',
         'stok',
         'user.username',
         'harga',

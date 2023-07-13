@@ -19,6 +19,15 @@ use Yii;
  */
 class Produk extends \yii\db\ActiveRecord
 {
+    const KULINER = '1';
+    const KUE = '2';
+    const MAKANAN_BERAT = '3';
+    const KATEGORI = [
+        '1' => 'Kuliner',
+        '2' => 'Kue',
+        '3' => 'Makanan Berat',
+    ];
+
     /**
      * {@inheritdoc}
      */
@@ -33,11 +42,12 @@ class Produk extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'nama_produk', 'deskripsi', 'stok', 'harga'], 'required'],
+            [['nama_produk', 'deskripsi', 'stok', 'harga'], 'required'],
             [['id', 'stok', 'harga'], 'integer'],
             [['deskripsi'], 'string'],
+            [['kategori'], 'in', 'range' => [self::KUE, self::KULINER, self::MAKANAN_BERAT]],
             [['nama_produk'], 'string', 'max' => 255],
-            [['id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['id' => 'id']],
+            [['id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['id' => 'id_produk']],
         ];
     }
 
@@ -51,6 +61,7 @@ class Produk extends \yii\db\ActiveRecord
             'id' => 'ID',
             'nama_produk' => 'Nama Produk',
             'deskripsi' => 'Deskripsi',
+            'kategori' => 'Kategori',
             'stok' => 'Stok',
             'harga' => 'Harga',
         ];
@@ -73,11 +84,11 @@ class Produk extends \yii\db\ActiveRecord
      */
     public function getPenjualan()
     {
-        return $this->hasOne(Penjualan::class, ['id_produk' => 'id_produk']);
+        return $this->hasOne(Penjualan::class, ['id_produk' => 'id']);
     }
     
     public function getUser()
     {
-        return $this->hasOne(User::class, ['id' => 'id']);
+        return $this->hasOne(User::class, ['id' => 'id_user']);
     }
 }
