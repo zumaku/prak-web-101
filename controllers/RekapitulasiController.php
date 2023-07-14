@@ -96,7 +96,7 @@ class RekapitulasiController extends \yii\web\Controller{
                     'id' => $data_produk->id,
                 ]);
             } else{
-                var_dump($newProduk->getError());
+                var_dump($data_produk->getError());
                 die();
             }
         } else{
