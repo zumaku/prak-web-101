@@ -76,20 +76,57 @@ class RekapitulasiController extends \yii\web\Controller{
         ]);
     }
 
-    // public function actionBalala(){
-    //     $jum_jual = rand(1, 100);
-    //     $untung = $jum_jual * '10000';
+    public function actionUpdate($id){
+        $produk = new Produk;
+        $data_produk = Produk::findOne(['id' => $id]);
+        $id_user = $data_produk->id_user;
 
-    //     $newPenjualan = new Penjualan;
-    //     $newPenjualan->jumlah_terjual = $jum_jual;
-    //     $newPenjualan->keuntungan = $untung;
-    //     $newPenjualan->id_produk = 25;
-    //     if($newPenjualan->save()){
-    //         var_dump($newPenjualan);
-    //         die;
-    //     } else{
-    //         var_dump($newPenjualan->getError());
-    //         die();
-    //     }
-    // }
+        if($produk->load($this->request->post())){     // load semua data yang ada di post dan save. redirect ke halaman view?id=...
+            $data_produk->nama_produk = $produk->nama_produk;
+            $data_produk->id_user = $id_user;
+            $data_produk->deskripsi = $produk->deskripsi;
+            $data_produk->kategori = $produk->kategori;
+            $data_produk->stok = $produk->stok;
+            $data_produk->harga = $produk->harga;
+            // var_dump($data_produk);
+            // die;
+            if( $data_produk->save() ){
+                return $this->redirect([
+                    'view',
+                    'id' => $data_produk->id,
+                ]);
+            } else{
+                var_dump($data_produk->getError());
+                die();
+            }
+        } else{
+            $produk->loadDefaultValues();
+        }
+
+        return $this->render('update', [
+            'model' => $produk,
+            'data_produk' => $data_produk,
+        ]);
+    }
+
+    public function actionDelete($id){
+        $produk = Produk::findOne($id);
+        $penjualan = Penjualan::findOne(['id_produk' => $id]);
+
+        if ($penjualan->delete()) {
+            if($produk->delete()){
+                Yii::$app->getSession()->setFlash('delSuccess', 'Produk <strong>berhasil dihapus!</strong>');
+                return $this->redirect(['index']);
+            } else{
+                var_dump($produk->getError());
+                die();
+            }
+        }
+        else {
+            var_dump($produk->getError());
+            die();
+        }
+    }
+
+
 }
