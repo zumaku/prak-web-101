@@ -129,8 +129,8 @@ class SiteController extends Controller
 
     public function actionCreateUser() {
         $model = new User;
-        $model->username = 'root';
-        $model->email = 'test@mail.com';
+        $model->username = 'aca';
+        $model->email = 'aqilahzahra2306@gmail.com';
         $model->setPassword('12345678');
         $model->generateAuthKey();
 

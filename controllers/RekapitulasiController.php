@@ -12,6 +12,27 @@ use yii\filters\AccessControl;
 use Yii;
 
 class RekapitulasiController extends \yii\web\Controller{
+    public function behaviors(){
+        return [
+            'access' => [
+                'class' => AccessControl::class,
+                'only' => ['index', 'tambah', 'view'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => [ 'view'],
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['tambah', 'index', 'view'],
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
+
     public function actionIndex(){
         $dataProvider = new ActiveDataProvider([
             'query' => Produk::find()->with('penjualan', 'user'),
@@ -20,6 +41,8 @@ class RekapitulasiController extends \yii\web\Controller{
             'dataProvider' => $dataProvider,
         ]);
     }
+
+
 
     public function actionView($id){
         $data = Produk::findOne($id);
@@ -75,6 +98,18 @@ class RekapitulasiController extends \yii\web\Controller{
             'model' => $newProduk,
         ]);
     }
+
+    // public function actionUpdate($id){
+    //     $newproduk = new Produk;
+    //     $newproduk = $newproduk->findOne($id);
+    //     $newproduk->nama_produk = 'Update';
+    //     $newproduk->save();
+    //     Yii::$app->getSession()->setFlash('sucUpdNewproduk', 'Produk ' . $newproduk-> . ' <strong>berhasil diupdate!</strong>');
+    //     return $this->redirect(['index']);
+    // }
+
+ 
+   
 
     // public function actionBalala(){
     //     $jum_jual = rand(1, 100);
