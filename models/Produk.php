@@ -47,7 +47,7 @@ class Produk extends \yii\db\ActiveRecord
             [['deskripsi'], 'string'],
             [['kategori'], 'in', 'range' => [self::KUE, self::KULINER, self::MAKANAN_BERAT]],
             [['nama_produk'], 'string', 'max' => 255],
-            [['id'], 'exist', 'skipOnError' => true, 'targetClass' => User::class, 'targetAttribute' => ['id' => 'id_produk']],
+            [['id'], 'exist', 'skipOnError' => true, 'targetClass' => Penjualan::class, 'targetAttribute' => ['id' => 'id_produk']],
         ];
     }
 
