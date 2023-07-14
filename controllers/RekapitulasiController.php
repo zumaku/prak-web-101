@@ -109,5 +109,24 @@ class RekapitulasiController extends \yii\web\Controller{
         ]);
     }
 
+    public function actionDelete($id){
+        $produk = Produk::findOne($id);
+        $penjualan = Penjualan::findOne(['id_produk' => $id]);
+
+        if ($penjualan->delete()) {
+            if($produk->delete()){
+                Yii::$app->getSession()->setFlash('delSuccess', 'Produk <strong>berhasil dihapus!</strong>');
+                return $this->redirect(['index']);
+            } else{
+                var_dump($produk->getError());
+                die();
+            }
+        }
+        else {
+            var_dump($produk->getError());
+            die();
+        }
+    }
+
 
 }
