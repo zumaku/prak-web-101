@@ -6,6 +6,9 @@ $this->title = "Rekapitulasi Penjualan";
 
 // var_dump($dataProvider);
 // die;
+$del = Yii::$app->session->getFlash('sucDelMhs');
+if( $del !== NULL )
+    echo '<div class="alert alert-success d-flex align-items-center" role="alert"><div>' . $del . ' </div></div>';
 ?>
 
 <a href="/rekapitulasi/tambah" class="btn bgku-secondary my-2"><i class="ti-plus"></i> Produk Baru</a>

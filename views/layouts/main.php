@@ -196,12 +196,14 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                                     <li><a href="javascript:void(0)"><i class="ti-user m-r-10 text-custom"></i> Profile</a></li>
                                     <li><a href="javascript:void(0)"><i class="ti-settings m-r-10 text-custom"></i> Settings</a></li>
                                     <li><a href="javascript:void(0)"><i class="ti-lock m-r-10 text-custom"></i> Lock screen</a></li>
+                                    
                                     <li class="divider"></li>
                                     <li>
                                     <?php                                        
                                         if (!Yii::$app->user->isGuest){
                                             // echo '<a href="/site/logout" data-method="post"><i class="ti-power-off m-r-10 text-danger"></i> Logout</a>';
-                                            echo '<form action="site/logout" method="POST">';
+                                            echo '<li><a href="/user/edit"><i class="ti-user m-r-10 text-custom"></i> Edit User</a></li>';
+                                            echo '<form action="/site/logout" method="POST">';
                                                 echo '<input id="form-token" type="hidden" name="' . Yii::$app->request->csrfParam . '"value="' . Yii::$app->request->csrfToken . '"/>';
                                                 echo '<button type="submit" id="my-btn-logout"><i class="ti-power-off m-r-10 text-danger"></i> Logout</button>';
                                             echo '</form>';
